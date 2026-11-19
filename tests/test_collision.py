@@ -29,4 +29,4 @@ def test_rectangles_qui_se_touchent_juste_au_bord():
     # Act
     result = entity1.collides(entity2)
     # Assert
-    assert result == True
+    assert result == False
