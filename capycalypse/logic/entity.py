@@ -1,10 +1,13 @@
 # AS : Risque de conflit que je resoudrai
 class Entity:
-    def __init__(self):
-        pass
+    def __init__(self, x, y, w, h):
+        self.x = x
+        self.y = y
+        self.w = w
+        self.h = h
     
-    def hitbox():
-        pass
+    def hitbox(self):
+        return self.x, self.y, self.w, self.h
     
     def collides(self, other:"Entity") -> bool:
         x1, y1, width1, height1 = self.hitbox()
