@@ -1,5 +1,8 @@
+# Taille de l'écran
 WIDTH = 1280
 HEIGHT = 720
+
+# Réglages de jeu
 FPS = 60
 GROUND_HEIGHT = 60  # hauteur du sol en bas de l'écran
 
