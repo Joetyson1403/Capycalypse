@@ -20,3 +20,18 @@ PIXELS_PER_METER = 50
 # Génération des obstacles (en pixels de distance)
 MIN_GAP = 350
 MAX_GAP = 700
+
+# Taille obstacle oiseau
+BIRD_WIDTH = 48
+BIRD_HEIGHT = 32
+
+# Paramètres oscillation oiseau
+BIRD_PULSATION = 4
+BIRD_AMPLITUDE = 60
+
+# Taille obstacle missile
+MISSILE_WIDTH = 80
+MISSILE_HEIGHT = 24
+
+# Vitesse en + du missile (Pour aller + vite que le décor)
+MISSILE_EXCESS_SPEED = 500
