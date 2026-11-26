@@ -1,10 +1,16 @@
+from pathlib import Path
+
 import pygame
 
 from capycalypse import config
 
+# Chemin de l'icône Capybara sur la fenêtre du jeu
+ICON_PATH = Path(__file__).resolve().parent.parent.parent / "assets" / "images" / "icon.png"
+
 class App:
     def __init__(self):
         pygame.init()
+        pygame.display.set_icon(pygame.image.load(ICON_PATH))                  # Icône Capybara dans la fenêtre du jeu
         self.screen = pygame.display.set_mode((config.WIDTH, config.HEIGHT))   # Taille de l'écran
         pygame.display.set_caption("Capycalypse")                              # Nom du jeu sur la fenêtre
         self.clock = pygame.time.Clock()                                       # Commencer un timer
