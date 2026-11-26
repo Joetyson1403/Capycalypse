@@ -25,6 +25,7 @@ class Bird(Obstacle):
         self.base_y = y
 
     def update(self, dt, scroll_speed):
+        super().update(dt, scroll_speed)
         self.time += dt
         self.y = self.base_y + \
             math.sin(self.time * config.BIRD_PULSATION) * config.BIRD_AMPLITUDE
