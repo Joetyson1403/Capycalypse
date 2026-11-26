@@ -26,4 +26,13 @@ class Player(Entity):
 		self.keep_on_screen()
 
 	def keep_on_screen(self):
-		pass  # À implémenter dans T10.
+		# 1. Le plafond : on ne peut pas sortir par le haut.
+		if self.y < 0:
+			self.y = 0
+			self.vy = 0
+
+		# 2. Le sol : le bas autorisé = hauteur écran - sol - taille du joueur.
+		lowest = config.HEIGHT - config.GROUND_HEIGHT - self.height
+		if self.y > lowest:
+			self.y = lowest
+			self.vy = 0
