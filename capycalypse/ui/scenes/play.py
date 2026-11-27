@@ -3,6 +3,7 @@ import pygame
 from capycalypse.logic.world import World
 from capycalypse.ui.background import ScrollingBackground, make_placeholder_background
 from capycalypse.ui.scenes.scene import Scene
+from capycalypse.logic.obstacles import Bird, Missile
 
 
 class PlayScene(Scene):
@@ -28,3 +29,11 @@ class PlayScene(Scene):
         p = self.world.player
         # Pour l'instant, le capybara est un simple rectangle marron.
         pygame.draw.rect(screen, (160, 103, 58), (p.x, p.y, p.width, p.height))   # Puis le capybara (devant)
+
+        b = Bird(10,200)
+
+        pygame.draw.rect(screen, (160, 103, 58), (b.x, b.y, b.width, b.height))    # Dessine un oiseau (en rectangle)
+
+        m = Missile(10,100)
+
+        pygame.draw.rect(screen, (255,0,0), (m.x, m.y, m.width, m.height))         # Dessine un missile (en rectangle)
