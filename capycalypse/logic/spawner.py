@@ -16,6 +16,9 @@ class Spawner:
         self.distance_until_next = config.MAX_GAP
 
     def update(self, dt, world):
+        # TODO : Actuellement Spawner s'occupe lui meme de rajouter un objet et ne le retourne pas
+        # Serait conseillé qu'il ne s'occupe que d'envoyer
+        
         # Le compteur diminue de la distance parcourue par le décor
         self.distance_until_next = self.distance_until_next - world.speed * dt
 
