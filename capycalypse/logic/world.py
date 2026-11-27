@@ -33,3 +33,9 @@ class World:
 
         # On garde seulement les obstacles encore actifs (pas sortis de l'écran)
         self.obstacles = [o for o in self.obstacles if o.active]   # Fabreique une nouvelle liste avec chaque obstable o de la liste, seulement si o.active est vrai
+        
+        # Verif collisions
+        for obstacle in self.obstacles:
+            if obstacle.is_dangerous() and self.player.collides(obstacle):
+                self.game_over = True
+                self.events.append("Hits")

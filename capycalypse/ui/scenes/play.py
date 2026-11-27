@@ -24,6 +24,10 @@ class PlayScene(Scene):
         # 2. Faire avancer toute la partie (joueur, obstacles, distance), puis le fond.
         self.world.update(dt)
         self.background.update(dt, self.world.speed)                       # Le fond suit la vitesse du jeu
+        
+        # Vérifier si game over
+        if self.world.game_over == True:
+            self.stop()
 
     def draw(self, screen):
         self.background.draw(screen)                                       # D'abord le fond (derrière)
@@ -37,4 +41,7 @@ class PlayScene(Scene):
                 pygame.draw.rect(screen, (0, 0, 255), (obstacle.x, obstacle.y, obstacle.width, obstacle.height))
             if(type(obstacle) == Missile):
                 pygame.draw.rect(screen, (255, 0, 0), (obstacle.x, obstacle.y, obstacle.width, obstacle.height))
-            
+    
+    def stop(self):
+        # TODO : A revoir car pas arret sur image mais création du début de la scène de test
+        self.background = ScrollingBackground(make_placeholder_background(), speed_factor=0)
